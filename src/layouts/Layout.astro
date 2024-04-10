@@ -2,6 +2,9 @@
 import Header from '../components/Header.astro';
 import '@fontsource-variable/onest';
 import Footer from '../components/Footer.astro';
+import Card from '../components/Card.astro';
+import Products from '../components/Products.astro';
+import Comments from '../components/Comments.astro';
 interface Props {
 	title: string;
 	description: string;
@@ -23,8 +26,44 @@ const { title, description } = Astro.props;
 	<body>
 
 		<Header />
+		<section class="flex flex-row w-full mx-2 text-black/80 h-[60px] space-x-4">
+			<div class="h-[250px] w-[300px] ml-10">
+				<h1 class="text-2xl font-semibold">Daily Deals</h1>
+				<p>Texto</p>
+			</div>
+			<div class="h-[250px] w-[300px] bg-gray-500">
+				<h1 class="text-2xl font-semibold ">Daily Deals</h1>
+				<p>Texto</p>
+			</div>
+			<div class="h-[250px] w-[300px] bg-gray-500">
+				<h1 class="text-2xl font-semibold ">Daily Deals</h1>
+				<p>Texto</p>
+			</div>
+			<div class="h-[250px] w-[300px] bg-gray-500">
+				<h1 class="text-2xl font-semibold" >Daily Deals</h1>
+				<p>Texto</p>
+			</div>
+	</section>
+		<div class="bg-black/70 w-full h-8 flex items-center justify-center mt-52 mx-10">
+			<p class="text-white">Separador</p>
+		</div>
+		<section class="ml-5 flex justify-between my-10">
+			<Card img={"https://media.revistagq.com/photos/606b3183a359af169e483dcb/16:9/w_2560%2Cc_limit/estar-guapo.jpeg"} description={"Imagen de un hombre"} title={"HOMBRE"}></Card>
+			<Card img={"https://e7.pngegg.com/pngimages/105/514/png-clipart-face-woman-desktop-faces-image-file-formats-black-hair.png"} description={"Imagen de una mujer"} title={"MUJER"}></Card>
+			<Card img={"https://static.wixstatic.com/media/db52a9_6e869c96994e4f10b0a5d4c679c5db00~mv2.jpeg/v1/fit/w_255,h_383,q_90/db52a9_6e869c96994e4f10b0a5d4c679c5db00~mv2.jpeg"} description={"Imagen de un niño"} title={"NIÑOS"}></Card>
+		</section>
+		<div class="flex justify-center my-3">
+			<h2 class="font-extrabold text-2xl text-black/90">Best sellers</h2>
+		</div>
+		<section class="ml-5 flex justify-between mb-2 text-black/80">
+			<Products img='https://media.istockphoto.com/id/821282266/es/foto/blanco-taza-aislada.jpg?s=612x612&w=0&k=20&c=5AXTocHRgcXlxKaHEHdUFRgj4QQ1m6FTiyltedW1Oog=' name={"taza de café"} price={"$20"}></Products>
+		</section>
+		<section class="ml-5 flex justify-between my-2">
+			<Comments img={'https://img.freepik.com/foto-gratis/retrato-hombre-caucasico-alegre_53876-13440.jpg?size=626&ext=jpg&ga=GA1.1.1488620777.1712620800&semt=ais'} text={"es una página demasiada buena y fácil usar"} name={"Keiner Ballesteros"}></Comments>
+		</section>
 		<slot />
-		<Footer />
+		<!-- 
+		<Footer />-->
 	</body>
 </html>
 <style is:global>
@@ -40,7 +79,6 @@ const { title, description } = Astro.props;
 		background: #fff;
 		min-height: 100vh;
 		flex-direction: column;
-		
 	}
 	@media (prefers-reduced-motion: reduce) {
 		html{

@@ -1,0 +1,15 @@
+---
+interface Props{
+    text: String;
+    img: String;
+    name: String;
+}
+const {text, img, name} = Astro.props;
+
+---
+<div class="card h-[180px] w-[300px] flex items-center justify-center flex-col space-y-2 bg-gray-500 rounded-xl">
+    <p class="font-extrabold text-red-400 text-2xl">""</p>
+    <p class="text-black/40">{text}</p>
+    <img class="w-[40px] h-[40px] rounded-full" src={img}>
+    <h2 class="text-black text-xl">{name}</h2>
+</div>

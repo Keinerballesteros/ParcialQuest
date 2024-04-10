@@ -1,0 +1,15 @@
+---
+interface Props {
+    name: string;
+    img: string;
+    price: String;
+}
+
+const { name, img,price  } = Astro.props;
+---
+
+<div class="card h-[100px] w-full flex items-center justify-center flex-col space-y-2 ">
+    <img class="w-[50px] h-[50px]" src={img}>
+    <h2 class=" text-xl">{name}</h2>
+    <b>{price}</b>
+</div>

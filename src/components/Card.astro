@@ -1,0 +1,12 @@
+---
+
+interface Props{
+    img: String;
+    title: String;
+    description: String;
+}
+const {img, title, description} = Astro.props;
+---
+<div class="card h-[200px] w-full flex items-center justify-center bg-cover bg-center" style={`background-image: url(${img})`}>
+    <h2 class="text-white text-2xl z-10">{title}</h2>
+</div>
